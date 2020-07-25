@@ -1,0 +1,36 @@
+saba:
+  appconfig:
+    servers:
+      productCompositeService: saba-product-composite-service
+
+---
+
+spring:
+  application:
+    name: saba-product-api-service
+    
+---   
+      
+security:
+  oauth2:
+    client:  
+      client-id: saba-product-api-service
+      client-secret: secret123 
+    resource:
+      id: saba-product-api-service
+      jwk:
+        key-set-uri: http://localhost:8765/uaa/.well-known/jwks.json
+    
+---
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream, info, health      
+        
+---
+    
+logging:
+  level: 
+    org.springframework.security: DEBUG       
