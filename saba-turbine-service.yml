@@ -1,0 +1,10 @@
+server:
+  port: 8989
+    
+---    
+   
+turbine:
+      appConfig: saba-product-composite-service,saba-product-api-service
+      aggregator:
+        clusterConfig: default
+      clusterNameExpression: new String("default")

@@ -1,0 +1,14 @@
+saba:
+  appconfig:
+    servers:
+      product: saba-product-service
+      recommendation: saba-product-recommendation-service
+      review: saba-product-review-service
+    
+---
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream, info, health

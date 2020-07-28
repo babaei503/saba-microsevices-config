@@ -1,0 +1,35 @@
+server:
+  port: 8765 
+   
+---    
+     
+info:
+  component: Zuul Server
+
+---
+
+zuul:
+  ignoredServices: '*'
+  routes:
+    auth-server-path:
+      path: /uaa/**
+      serviceId: saba-auth-server  
+      stripPrefix: false  
+    dashboard-service-path:
+      path: /dashboard/**
+      serviceId: saba-dashboard-service  
+      stripPrefix: false
+    product-api-path:
+      path: /api/product/**
+      serviceId: saba-product-api-service   
+  sensitiveHeaders: Cookie,Set-Cookie
+  host:
+    connect-timeout-millis: 60000 
+    socket-timeout-millis: 60000  
+                  
+---     
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: INFO

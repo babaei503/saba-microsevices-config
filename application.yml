@@ -24,4 +24,10 @@ eureka:
     registryFetchIntervalSeconds: 5
   instance:
     leaseRenewalIntervalInSeconds: 10
-    instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}      
+    instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
+              
+---
+
+spring.rabbitmq:
+  host: localhost
+  port: 5672      
