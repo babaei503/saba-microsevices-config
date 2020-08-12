@@ -25,17 +25,36 @@ eureka:
   instance:
     leaseRenewalIntervalInSeconds: 10
     instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
+    preferIpAddress: false
               
----
-
-spring.rabbitmq:
-  host: localhost
-  port: 5672
-
-  
 ---
 
 spring:
   sleuth:
     sampler:
-      percentage: 1.0   
+      percentage: 1.0  
+
+---
+   
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+  zipkin:
+    sender:
+      type: rabbit
+              
+---
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health
+
+---
+
+spring:
+  profiles: docker
+  rabbitmq:
+    host: rabbitmq

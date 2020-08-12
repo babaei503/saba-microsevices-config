@@ -1,3 +1,10 @@
 server:
   servlet:
-    context-path: /dashboard      
+    context-path: /dashboard
+    
+---
+
+spring:
+  profiles: docker
+server:
+  port: 7979        

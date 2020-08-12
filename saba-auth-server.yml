@@ -32,3 +32,12 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   messages:
     basename: validation
+    
+---
+
+spring:
+  profiles: docker
+  datasource:
+    url: jdbc:mysql://mysql-auth-server:3306/authdb?useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: a+123456

@@ -33,4 +33,15 @@ management:
     
 logging:
   level: 
-    org.springframework.security: DEBUG       
+    org.springframework.security: DEBUG
+            
+---
+
+spring:
+  profiles: docker
+
+security:
+  oauth2:
+    resource:
+      jwk:
+        key-set-uri: http://edgeserver:8765/uaa/.well-known/jwks.json  

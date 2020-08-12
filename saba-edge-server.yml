@@ -26,6 +26,18 @@ zuul:
   host:
     connect-timeout-millis: 60000 
     socket-timeout-millis: 60000  
+
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 1220000
+                        
+ribbon:
+  ReadTimeout: 60000
+  ConnectionTimeout: 60000
                   
 ---     
 

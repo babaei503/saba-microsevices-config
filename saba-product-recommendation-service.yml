@@ -12,3 +12,12 @@ spring:
     username: saba
     password: a+123456
     driver-class-name: com.mysql.cj.jdbc.Driver
+    
+---
+
+spring:
+  profiles: docker
+  datasource:
+    url: jdbc:mysql://mysql-product-recommendation-service:3306/productrecommendationdb?useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: a+123456
