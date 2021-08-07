@@ -32,7 +32,7 @@ eureka:
 spring:
   sleuth:
     sampler:
-      percentage: 1.0
+      percentage: 0.1
   banner:
     location: classpath:/saba-banner.txt      
 
@@ -60,3 +60,9 @@ spring:
   profiles: docker
   rabbitmq:
     host: rabbitmq
+    
+---     
+
+logging:
+  level:
+    ROOT: INFO    
