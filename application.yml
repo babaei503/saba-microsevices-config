@@ -32,7 +32,7 @@ eureka:
 spring:
   sleuth:
     sampler:
-      percentage: 0.1
+      percentage: 1.0
   banner:
     location: classpath:/saba-banner.txt      
 
